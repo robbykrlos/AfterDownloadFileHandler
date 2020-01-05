@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AfterDownloadFileHandler.Properties" GeneratedClassName="Params">
+  <Profiles />
+  <Settings>
+    <Setting Name="REMOTE_MOVIES_PATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">m:/</Value>
+    </Setting>
+    <Setting Name="REMOTE_SERIES_PATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">i:/</Value>
+    </Setting>
+    <Setting Name="LABEL_TRIGGER_VALUE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Copy2NAS</Value>
+    </Setting>
+    <Setting Name="AUTO_SUBTITLE_DOWNLOAD" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SKIP_SAMPLES" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
