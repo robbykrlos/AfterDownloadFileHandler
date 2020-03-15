@@ -61,10 +61,46 @@ namespace AfterDownloadFileHandler.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool SKIP_SAMPLES {
+        [global::System.Configuration.DefaultSettingValueAttribute("m:/ZZZ/")]
+        public string REMOTE_UNKNOWN_PATH {
             get {
-                return ((bool)(this["SKIP_SAMPLES"]));
+                return ((string)(this["REMOTE_UNKNOWN_PATH"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dat,Dat,DAT,nfo,Nfo,NFO")]
+        public string SKIP_FILE_EXTENSIONS {
+            get {
+                return ((string)(this["SKIP_FILE_EXTENSIONS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("str,srt,sub")]
+        public string SUB_EXTENSIONS {
+            get {
+                return ((string)(this["SUB_EXTENSIONS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rum,eng")]
+        public string ASD_LANG {
+            get {
+                return ((string)(this["ASD_LANG"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sample,Sample,SAMPLE,samples,Samples,SAMPLES")]
+        public string SKIP_SAMPLES {
+            get {
+                return ((string)(this["SKIP_SAMPLES"]));
             }
         }
     }

@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>
-    </StartArguments>
+    <StartArguments>f:\MyProjects\GIT\AfterDownloadFileHandler_GIT\AfterDownloadFileHandler\TESTS\LOCAL\DOWNLOADS\The.Handmaids.Tale.S04E02.HDTV.x264-MTB FL-Copy2NAS-NOW</StartArguments>
   </PropertyGroup>
 </Project>
