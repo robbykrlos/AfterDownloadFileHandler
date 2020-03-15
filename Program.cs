@@ -100,6 +100,9 @@ namespace AfterDownloadFileHandler
                             if (!tvSeriesDir.Exists)
                             {
                                 Directory.CreateDirectory(tvSeriesDir.FullName);
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.WriteLine("INFO : Creating destination directory : " + tvSeriesDir.FullName);
+                                Console.ResetColor();
                             }
 
                             //Create or use existing TVSeries Season Folder.
@@ -107,6 +110,9 @@ namespace AfterDownloadFileHandler
                             if (!tvSeriesSeasonDir.Exists)
                             {
                                 Directory.CreateDirectory(tvSeriesSeasonDir.FullName);
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.WriteLine("INFO : Creating destination directory : " + tvSeriesSeasonDir.FullName);
+                                Console.ResetColor();
                             }
 
                             //prepare skippable content in lists
@@ -165,7 +171,7 @@ namespace AfterDownloadFileHandler
                                 Console.ForegroundColor = ConsoleColor.White;
                                 Console.WriteLine("INFO : Call ASD...");
                                 Console.ResetColor();
-                                var output = AutoSubtitleDownloader.ASD.Start(new string[] { tvSeriesSeasonDir.FullName, configAutoSubDownloaderLanguages, "", "", "/s" });
+                                var output = AutoSubtitleDownloader.ASD.Start(new string[] { tvSeriesSeasonDir.FullName + '/', configAutoSubDownloaderLanguages, "", "", "/s" });
                                 Console.ForegroundColor = ConsoleColor.Cyan;
                                 Console.WriteLine(output);
                                 Console.ResetColor();
@@ -180,7 +186,7 @@ namespace AfterDownloadFileHandler
                             //TODO : copy the content of the season folder in the right Series folder
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.WriteLine("CASE 2 : DIR TVSeries S - NOT YET FULLY IMPLEMENTED - MANUALLY MOVE TO CORRECT FOLDER");
+                            Console.WriteLine("CASE 2 : DIR TVSeries S");
                             Console.ResetColor();
 
                             //Create or use existing TVSeries Folder.
@@ -188,16 +194,20 @@ namespace AfterDownloadFileHandler
                             if (!tvSeriesDir.Exists)
                             {
                                 Directory.CreateDirectory(tvSeriesDir.FullName);
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.WriteLine("INFO : Creating destination directory : " + tvSeriesDir.FullName);
+                                Console.ResetColor();
                             }
 
                             //Try to copy new TV Series Season into the TV Series folder
                             if (DirectoryCopy.Copy(dirInfo.FullName, tvSeriesDir.FullName, true, configSkipSamples, configSkipFileExtensions))
                             {
                                 //Check for subtitles.
-                                if (!hasExistingFolderSubs(tvSeriesDir.FullName + "\\" + dirInfo.Name, configSubExtensions))
+                                string destDirName = tvSeriesDir.FullName + '/' + dirInfo.Name + '/';
+                                if (!hasExistingFolderSubs(destDirName, configSubExtensions))
                                 {
                                     //Call ASD to download subs if not present.
-                                    var output = AutoSubtitleDownloader.ASD.Start(new string[] { tvSeriesDir.FullName + "\\" + dirInfo.Name, configAutoSubDownloaderLanguages, "", "", "/s" });
+                                    var output = AutoSubtitleDownloader.ASD.Start(new string[] { destDirName, configAutoSubDownloaderLanguages, "", "", "/s" });
                                     Console.ForegroundColor = ConsoleColor.Cyan;
                                     Console.WriteLine(output);
                                     Console.ResetColor();
@@ -218,10 +228,11 @@ namespace AfterDownloadFileHandler
                             if (DirectoryCopy.Copy(dirInfo.FullName, configRemoteMoviesPath, true, configSkipSamples, configSkipFileExtensions))
                             {
                                 //TODO : Check for subtitles.
-                                if (!hasExistingFolderSubs(configRemoteMoviesPath + dirInfo.Name, configSubExtensions))
+                                string destDirName = configRemoteMoviesPath.TrimEnd(new char[] { '/', '\\' }) + '/' + dirInfo.Name + '/';
+                                if (!hasExistingFolderSubs(destDirName, configSubExtensions))
                                 {
                                     //TODO : Call ASD to download subs if not present.
-                                    var output = AutoSubtitleDownloader.ASD.Start(new string[] { configRemoteMoviesPath + dirInfo.Name, configAutoSubDownloaderLanguages, "", "", "/s" });
+                                    var output = AutoSubtitleDownloader.ASD.Start(new string[] { destDirName, configAutoSubDownloaderLanguages, "", "", "/s" });
                                     Console.ForegroundColor = ConsoleColor.Cyan;
                                     Console.WriteLine(output);
                                     Console.ResetColor();
@@ -277,7 +288,7 @@ namespace AfterDownloadFileHandler
                                 Console.ForegroundColor = ConsoleColor.White;
                                 Console.WriteLine("INFO : Call ASD...");
                                 Console.ResetColor();
-                                var output = AutoSubtitleDownloader.ASD.Start(new string[] { tvSeriesSeasonDir.FullName, configAutoSubDownloaderLanguages, "", "", "/s" });
+                                var output = AutoSubtitleDownloader.ASD.Start(new string[] { tvSeriesSeasonDir.FullName + '/', configAutoSubDownloaderLanguages, "", "", "/s" });
                                 Console.ForegroundColor = ConsoleColor.Cyan;
                                 Console.WriteLine(output);
                                 Console.ResetColor();
@@ -322,7 +333,7 @@ namespace AfterDownloadFileHandler
                                 Console.ForegroundColor = ConsoleColor.White;
                                 Console.WriteLine("INFO : Call ASD...");
                                 Console.ResetColor();
-                                var output = AutoSubtitleDownloader.ASD.Start(new string[] { destDirName, configAutoSubDownloaderLanguages, "", "", "/s" });
+                                var output = AutoSubtitleDownloader.ASD.Start(new string[] { destDirName + '/', configAutoSubDownloaderLanguages, "", "", "/s" });
                                 Console.ForegroundColor = ConsoleColor.Cyan;
                                 Console.WriteLine(output);
                                 Console.ResetColor();

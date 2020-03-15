@@ -17,17 +17,17 @@
     <Setting Name="REMOTE_UNKNOWN_PATH" Type="System.String" Scope="Application">
       <Value Profile="(Default)">m:/ZZZ/</Value>
     </Setting>
-    <Setting Name="SKIP_FILE_EXTENSIONS" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">dat,Dat,DAT,nfo,Nfo,NFO</Value>
-    </Setting>
-    <Setting Name="SUB_EXTENSIONS" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">str,srt,sub</Value>
-    </Setting>
     <Setting Name="ASD_LANG" Type="System.String" Scope="Application">
       <Value Profile="(Default)">rum,eng</Value>
     </Setting>
+    <Setting Name="SKIP_FILE_EXTENSIONS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">.dat,.Dat,.DAT,.nfo,.Nfo,.NFO</Value>
+    </Setting>
+    <Setting Name="SUB_EXTENSIONS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">.str,.srt,.sub</Value>
+    </Setting>
     <Setting Name="SKIP_SAMPLES" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">sample,Sample,SAMPLE,samples,Samples,SAMPLES</Value>
+      <Value Profile="(Default)">sample,Sample,SAMPLE</Value>
     </Setting>
   </Settings>
 </SettingsFile>

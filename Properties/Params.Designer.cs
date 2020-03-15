@@ -70,24 +70,6 @@ namespace AfterDownloadFileHandler.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("dat,Dat,DAT,nfo,Nfo,NFO")]
-        public string SKIP_FILE_EXTENSIONS {
-            get {
-                return ((string)(this["SKIP_FILE_EXTENSIONS"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("str,srt,sub")]
-        public string SUB_EXTENSIONS {
-            get {
-                return ((string)(this["SUB_EXTENSIONS"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("rum,eng")]
         public string ASD_LANG {
             get {
@@ -97,7 +79,25 @@ namespace AfterDownloadFileHandler.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sample,Sample,SAMPLE,samples,Samples,SAMPLES")]
+        [global::System.Configuration.DefaultSettingValueAttribute(".dat,.Dat,.DAT,.nfo,.Nfo,.NFO")]
+        public string SKIP_FILE_EXTENSIONS {
+            get {
+                return ((string)(this["SKIP_FILE_EXTENSIONS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".str,.srt,.sub")]
+        public string SUB_EXTENSIONS {
+            get {
+                return ((string)(this["SUB_EXTENSIONS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sample,Sample,SAMPLE")]
         public string SKIP_SAMPLES {
             get {
                 return ((string)(this["SKIP_SAMPLES"]));

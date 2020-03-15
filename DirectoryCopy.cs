@@ -44,7 +44,7 @@ namespace AfterDownloadFileHandler
             }
 
             //Append movie folder after base destination folder.
-            destDirName += "\\" + dir.Name;
+            destDirName = destDirName.TrimEnd(new char[] { '/', '\\'}) + "\\" + dir.Name;
 
             if (!Directory.Exists(destDirName))
             {
